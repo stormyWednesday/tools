@@ -5,7 +5,7 @@ import pymysql
 class MysqlClient:
     def __init__(self, host=None, db=None):        
         self.host = host
-		# 使用时修改用户名与密码
+        # 使用时修改用户名与密码
         self.user = ''
         self.passwd = ''        
         self.db = db
