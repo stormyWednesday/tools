@@ -12,6 +12,7 @@ class JenkinsAPI:
     """
 
     def __init__(self):
+        # 使用时修改url、username和密码
         self.url = 'http://127.0.0.1:8080/'
         self.username = 'admin'
         self.password = 'admin'
