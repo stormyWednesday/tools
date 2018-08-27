@@ -3,6 +3,12 @@ import pymysql
 
 
 class MysqlClient:
+    """
+    Installing:
+        pip install pymysql
+    Import:
+        import pymysql
+    """
     def __init__(self, host=None, db=None):        
         self.host = host
         # 使用时修改用户名与密码
