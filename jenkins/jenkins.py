@@ -17,6 +17,8 @@ class JenkinsAPI:
         self.username = 'admin'
         self.password = 'admin'
         self.server = self._connect()
+        # 目前python-jenkins模块调用get_version()存在bug，故加入get_whoami()
+        self.server.get_whoami()
 
     def _connect(self):
         return jenkins.Jenkins(self.url, username=self.username, password=self.password)
