@@ -33,15 +33,10 @@ class MyRunner(object):
         Options = namedtuple('Options',
                              ['connection', 'module_path', 'forks', 'become', 'become_method', 'become_user', 'check',
                               'diff'])
- 
-
-
-        self.loader = DataLoader()
-  
+        self.loader = DataLoader()  
         self.options = Options(connection='ssh', module_path='/path/to/mymodules', forks=100, become=None,
                                become_method=None, become_user=None, check=False,
-                               diff=False)
-     
+                               diff=False)     
         self.passwords = dict(vault_pass='secret')
         self.inventory = InventoryManager(loader=self.loader, sources=self.resource)
         self.variable_manager = VariableManager(loader=self.loader, inventory=self.inventory)
@@ -145,4 +140,3 @@ class ResultsCollector(CallbackBase):
   
     def v2_runner_on_failed(self, result,  *args, **kwargs):  
         self.host_failed[result._host.get_name()] = result
-
