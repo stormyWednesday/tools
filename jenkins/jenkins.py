@@ -25,7 +25,22 @@ class JenkinsAPI:
 
     def get_version(self):
         """get jenkins version"""
-        print(self.server.get_version())
+        print(self.server.get_version())        
+        
+    def get_config(self, name):
+        """get job config"""
+        return self.server.get_job_config(name)
+
+    def create_job(self, name, xml):
+        """create new job"""
+        return self.server.create_job(name, xml)
+
+    def build_job(self, name, *args, **kwargs):
+        """build job"""
+        return self.server.build_job(name, *args, **kwargs)
+
+    def delete_job(self, name):       
+        return self.server.delete_job(name)
 
 
 if __name__ == '__main__':
